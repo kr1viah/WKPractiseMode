@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=3 uid="uid://ccv5xd7ot1h1"]
+
+[ext_resource type="Script" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/enemywindow.gd" id="1_l81uc"]
+[ext_resource type="Shader" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/bg.gdshader" id="2_1lue1"]
+[ext_resource type="Texture2D" uid="uid://c5pi5oswaa7nn" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/circle.png" id="3_rl1ne"]
+[ext_resource type="Texture2D" uid="uid://h60dumafvha7" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/heptagon.png" id="4_p6ndh"]
+[ext_resource type="PackedScene" uid="uid://dijlr3w7888m7" path="res://src/ui/button/button.tscn" id="4_xd6kq"]
+[ext_resource type="Texture2D" uid="uid://c2unwhwb0yc0t" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/splitter.png" id="5_tcuqg"]
+[ext_resource type="Texture2D" uid="uid://bhsiqh4ugtnaj" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/square.png" id="6_fog4a"]
+[ext_resource type="Texture2D" uid="uid://ttd7mxtescf3" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/sweeper.png" id="7_78s07"]
+[ext_resource type="Texture2D" uid="uid://cn73bdsmns2ud" path="res://mods-unpacked/kr1v-practisemode/windows/enemy/triangle.png" id="8_l53qk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fqrm"]
+shader = ExtResource("2_1lue1")
+shader_parameter/point = Vector2(600, 197)
+shader_parameter/pos = Vector2(-39, -7)
+shader_parameter/modulate2 = Vector4(0.045, -0.27, 0.673, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejmkd"]
+shader = ExtResource("2_1lue1")
+shader_parameter/point = Vector2(600, 197)
+shader_parameter/pos = Vector2(3, -10)
+shader_parameter/modulate2 = Vector4(0.045, -0.27, 0.673, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ie40"]
+shader = ExtResource("2_1lue1")
+shader_parameter/point = Vector2(600, 197)
+shader_parameter/pos = Vector2(-23, 37)
+shader_parameter/modulate2 = Vector4(0.045, -0.27, 0.673, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7pq6"]
+shader = ExtResource("2_1lue1")
+shader_parameter/point = Vector2(600, 197)
+shader_parameter/pos = Vector2(16, 62)
+shader_parameter/modulate2 = Vector4(0.045, -0.27, 0.673, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkuh8"]
+shader = ExtResource("2_1lue1")
+shader_parameter/point = Vector2(600, 197)
+shader_parameter/pos = Vector2(55, -13)
+shader_parameter/modulate2 = Vector4(0.045, -0.27, 0.673, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bi8bm"]
+shader = ExtResource("2_1lue1")
+shader_parameter/point = Vector2(600, 197)
+shader_parameter/pos = Vector2(65, 30)
+shader_parameter/modulate2 = Vector4(0.045, -0.27, 0.673, 1)
+
+[node name="Window" type="Window"]
+position = Vector2i(0, 32)
+size = Vector2i(360, 300)
+rect = Rect2i(0, 32, 360, 300)
+script = ExtResource("1_l81uc")
+metadata/focus_control = NodePath("Control/PanelContainer/Button")
+metadata/custGame = true
+
+[node name="bg" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1fqrm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_rl1ne")
+
+[node name="bg2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ejmkd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_p6ndh")
+
+[node name="bg3" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1ie40")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tcuqg")
+
+[node name="bg4" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_m7pq6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_fog4a")
+
+[node name="bg5" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_wkuh8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_78s07")
+
+[node name="bg6" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_bi8bm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_l53qk")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -17.5
+offset_right = 90.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Button" parent="Control/PanelContainer" instance=ExtResource("4_xd6kq")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "enemy wave"
+filled = true
